@@ -158,12 +158,47 @@ document.addEventListener('keydown', (event) => {
 })
 
 
-let abt__hover = null;
-let abt__hover_pos = 0;
-let abt__pos = 1;
+const boxes = document.querySelectorAll(".pbox");
+let index = 0;
+const numcol = 2;
 
+boxes[index].classList.add("selected");
 
-if (abt__hover === true) {
-    document.querySelector(".abt__me__heading").style.boxShadow = ""
+function updateSelection() {
+    boxes.forEach(box => box.classList.remove("selected"));
+    boxes[index].classList.add("selected");
 }
 
+document.addEventListener('keydown', (x) => {
+    const total = boxes.length;
+
+    switch(x.key) {
+        case 'ArrowRight':
+            if ((index+1) % numcol !== 0 && index + 1 < total) {
+                index++;
+                break;
+            }
+        case 'ArrowLeft':
+            if (index % numcol !== 0) {
+                index--;
+                break;
+            }
+        case 'ArrowUp':
+            if (index - numcol >= 0) {
+                index -= numcol;
+                break;
+            }
+        case 'ArrowDown':
+            if (index + numcol < 6) {
+                index += numcol;
+                break;
+            }
+        case 'z':
+        case 'Z':
+            const target = boxes[index].dataset.link;
+            switchScreen(".abt__me", target, false);
+            break;
+    }
+
+    updateSelection();
+})
