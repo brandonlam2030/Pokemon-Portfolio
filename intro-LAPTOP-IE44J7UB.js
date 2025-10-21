@@ -95,6 +95,65 @@ let curr = null;
 let kdf__dialogue = false;
 let kdb__dialogue = true;
 let target;
+let select = false;
+const boxes = document.querySelectorAll(".pbox");
+let index = 0;
+const numcol = 2;
+
+boxes[index].classList.add("selected");
+
+function updateSelection() {
+    boxes.forEach(box => box.classList.remove("selected"));
+    boxes[index].classList.add("selected");
+}
+console.log(boxes[0].dataset.link);
+
+document.addEventListener('keydown', (x) => {
+    const total = boxes.length;
+
+    switch(x.key) {
+        case 'ArrowRight':
+            if ((index+1) % numcol !== 0 && index + 1 < total) {
+                index++;
+                target = boxes[index].dataset.link;
+                select = true;
+                console.log(`.${target}`);
+                console.log(select);
+
+                break;
+            }
+            break;
+        case 'ArrowLeft':
+            if (index % numcol !== 0) {
+                index--;
+                target = boxes[index].dataset.link;
+                select = true;
+                break;
+            }
+            break;
+        case 'ArrowUp':
+            if (index - numcol >= 0) {
+                index -= numcol;
+                target = boxes[index].dataset.link;
+                select = true;
+                break;
+            }
+            break;
+        case 'ArrowDown':
+            if (index + numcol < 6) {
+                index += numcol;
+                target = boxes[index].dataset.link;
+                select = true;
+                break;
+            }
+            break;
+        
+        
+    }
+
+    updateSelection();
+})
+
 
 document.addEventListener('keydown', (event) => {
     const key = event.key.toLowerCase();
@@ -148,8 +207,11 @@ document.addEventListener('keydown', (event) => {
             switchScene(".screenthree", ".abt__me", kdf__dialogue);
             abt__hover = true;
             screencount = 2;
-        } else {
+            position--;
+        } else if (select) {
             switchScene(".abt__me", `.${target}`, false);
+            screencount = 3;
+            select = false;
         }
    }
     
@@ -161,50 +223,6 @@ document.addEventListener('keydown', (event) => {
 })
 
 
-const boxes = document.querySelectorAll(".pbox");
-let index = 0;
-const numcol = 2;
 
-boxes[index].classList.add("selected");
 
-function updateSelection() {
-    boxes.forEach(box => box.classList.remove("selected"));
-    boxes[index].classList.add("selected");
-}
-
-document.addEventListener('keydown', (x) => {
-    const total = boxes.length;
-
-    switch(x.key) {
-        case 'ArrowRight':
-            if ((index+1) % numcol !== 0 && index + 1 < total) {
-                index++;
-                target = boxes[index].dataset.link;
-                break;
-            }
-            break;
-        case 'ArrowLeft':
-            if (index % numcol !== 0) {
-                index--;
-                target = boxes[index].dataset.link;
-                break;
-            }
-            break;
-        case 'ArrowUp':
-            if (index - numcol >= 0) {
-                index -= numcol;
-                target = boxes[index].dataset.link;
-                break;
-            }
-            break;
-        case 'ArrowDown':
-            if (index + numcol < 6) {
-                index += numcol;
-                target = boxes[index].dataset.link;
-                break;
-            }
-            break;
-    }
-
-    updateSelection();
-})
+console.log(`.${target}`);
