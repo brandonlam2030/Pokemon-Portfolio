@@ -40,7 +40,7 @@ html, body{
 
 }
 
-.screenone.show{
+.screenone.show, .screentwo.show ,.screenthree.show ,.abt__me.show ,.project1.show{
     opacity:0;
 }
 
@@ -90,9 +90,7 @@ html, body{
 }
 
 
-.screentwo.show{
-    opacity:0;
-}
+
 
 
 
@@ -118,7 +116,7 @@ html, body{
     color:white;
     background-color:transparent;
     justify-content:flex-start;
-    font-size: clamp(14px, 2cqw, 30px);
+    font-size: clamp(14px, 1.5cqw, 30px);
 }
 
 .typevalue {
@@ -139,9 +137,7 @@ html, body{
     padding:0 10px;
 }
 
-.screenthree.show {
-    opacity:0;
-}
+
 
 .outter__suitcase {
     height:65vh;
@@ -253,7 +249,77 @@ button {
 }
 
 .project1 {
-    background-image:url("Images/projectscreen.jpg");
+    display:flex;
+    height: 100vh;
+    width:100%;
+    justify-content:flex-start;
+    align-items:flex-start;
+    background-color:rgb(241, 255, 230);
+    flex-direction:column;
+    
+    /* height:100vh;
+    width:100%;
+    justify-content:flex-start;
+    align-items:center;
+    transition:opacity 1s ease;
+    z-index:-1;
+    opacity:1;
+    background-image:url("Images/aefd1ff7-e347-488c-87bf-e0bc380faefe.png");
+
+    background-size:100% 100%;
+    background-position: center;
     background-repeat:no-repeat;
-    background-size:contain;
+    flex-direction:column;
+    gap:15px;
+    padding: 5px 0; */
 }
+
+/*display: none;
+    width: 100%;
+    height: 100vh;
+    background-image: url("Images/projectscreen.jpg");
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: opacity 1s ease;
+    z-index: -1;
+    opacity: 1;
+*/
+.project__heading{
+    display:flex;
+    background-color:blue;
+    color:white;
+    height:10%;
+    width:100%;
+    font-size:3em;
+    text-align:center;
+    padding: 0 30px;
+
+}
+
+.left__half {
+    border-radius:20px;
+    height:18%;
+    width:30%;
+    margin-left:6em;
+    margin-top: 5em;
+    background-image:linear-gradient(to bottom, rgb(255, 253, 112) 0%,rgb(255, 25547, 112) 50%, white 50%, white 100%);
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+    padding:10px;
+    gap:20px;
+}
+
+.left__half img {
+    height:3em;
+    width:3em;
+    
+}
+
+.left__half h2 {
+    font-size:30px;
+    
+}
+
+

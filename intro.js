@@ -1,3 +1,6 @@
+let screens = [".screenone",".screentwo",".screenthree",[".abt__me"], 
+              [".project1",".project2",".project3",".project4",".project5",".project6"]];
+
 let screenone = true;
 let screentwo = true;
 let screenthree = true;
@@ -68,16 +71,7 @@ function switchScene(classOne, classTwo, bool) {
         });
 
 
-        }, 2000);
-    } else {
-        setTimeout(() => {
-        sOne.style.display='none';
-        sTwo.style.display='flex';
-        document.querySelector(".dialogue").style.display = "none";
-
-        
-
-        }, 2000);
+        }, 1000);
     }
 
 }
@@ -114,34 +108,30 @@ document.addEventListener('keydown', (x) => {
         case 'ArrowRight':
             if ((index+1) % numcol !== 0 && index + 1 < total) {
                 index++;
-                target = boxes[index].dataset.link;
-                select = true;
                 break;
             }
             break;
         case 'ArrowLeft':
             if (index % numcol !== 0) {
                 index--;
-                target = boxes[index].dataset.link;
-                select = true;
                 break;
             }
             break;
         case 'ArrowUp':
             if (index - numcol >= 0) {
                 index -= numcol;
-                target = boxes[index].dataset.link;
-                select = true;
                 break;
             }
             break;
         case 'ArrowDown':
             if (index + numcol < 6) {
                 index += numcol;
-                target = boxes[index].dataset.link;
-                select = true;
                 break;
             }
+            break;
+        case  'z':
+        case 'Z':
+            select = true;
             break;
         
         
@@ -187,32 +177,39 @@ document.addEventListener('keydown', (event) => {
 
    if(key === 'z') {
         if (step === 0) {
-            switchScene(".screenone", ".screentwo", true);
+            switchScene(screens[step], screens[step+1], true);
             step++; 
             cont = false;
             screencount=0;
             return;
 
         } else if (step === 1 && cont) {
-            switchScene(".screentwo",".screenthree", true);
+            switchScene(screens[step],screens[step+1], true);
             step++;
             cont = false;
             screencount = 1;
             return;
         } else if (position === 0) {
-            switchScene(".screenthree", ".abt__me", kdf__dialogue);
+            switchScene(screens[step], screens[step+1][0], true);
             abt__hover = true;
             screencount = 2;
             position--;
+            step++;
+            return;
         } else if (select) {
-            switchScene(".abt__me", `.${target}`, false);
+            switchScene(screens[step][0], screens[step+1][index], true);
             screencount = 3;
             select = false;
+            step++;
+            return;
         }
    }
     
    if (key === 'x') {
-    switchScene(curr,prev,kdb__dialogue);
+    
+    switchScene(screens[step], screens[step-1], true);
+    step--;
+    return;
    }
 
 
