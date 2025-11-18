@@ -152,14 +152,14 @@ document.addEventListener('keydown', (event) => {
 
 
     if (position === 0) {
-        document.getElementById("triangle__selector").style.left = "23%";
-        document.getElementById("triangle__selector").style.top = "48%";
+        document.getElementById("triangle__selector").style.left = "25%";
+        document.getElementById("triangle__selector").style.top = "46%";
     } else if (position === 1) {
-        document.getElementById("triangle__selector").style.left = "41%";
-        document.getElementById("triangle__selector").style.top = "56%";
+        document.getElementById("triangle__selector").style.left = "42%";
+        document.getElementById("triangle__selector").style.top = "54%";
     } else if (position === 2) {
-        document.getElementById("triangle__selector").style.left = "65.5%";
-        document.getElementById("triangle__selector").style.top = "47%";
+        document.getElementById("triangle__selector").style.left = "64.5%";
+        document.getElementById("triangle__selector").style.top = "45%";
     }
 
     
