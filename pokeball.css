@@ -217,7 +217,13 @@ html, body{
     transition:opacity 1s ease;
     z-index:-1;
     opacity:1;
-    background-image:url("Images/select_bg.png");
+    background: repeating-linear-gradient(
+        to bottom, 
+        rgb(94, 121, 69) 0,
+        rgb(94, 121, 69) .75%,
+        rgb(111, 133, 90) .75%,
+        rgb(111, 133, 90) 1.5%
+    );
     background-size:cover;
     flex-direction:column;
     gap:15px;
@@ -230,8 +236,8 @@ html, body{
     display:grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows:repeat(3,auto);
-    gap:2em;
-
+    gap:1%;
+    padding-top:.5%;
 
     width:100%;
     height:100%;
@@ -435,7 +441,7 @@ html, body{
 }
 
 
-/* Replace the .stat__box, .stat__names, and .stat__numbers sections with this: */
+
 
 .stat__box {
     background: repeating-linear-gradient(
@@ -453,7 +459,7 @@ html, body{
 
 .stat__names {
     height: 100%;
-    width: 50%;
+    width: 45%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -481,24 +487,26 @@ html, body{
     height: 10%; 
     width: 100%;
     padding-left: 10%;
-    border:1px solid red;
 }
 
 .stat__numbers {
     background: repeating-linear-gradient(
         to bottom,
         rgb(247, 247, 180) 0%,
-        rgb(247, 247, 180) 10%,
-        white 10%,
-        white 20%
+        rgb(247, 247, 180) 20%,
+        white 20%,
+        white 40%
     );
-    height: 100%;
-    width: 50%;
+    height: 50%;
+    width: 90%;
     display: flex;
     color: rgb(0, 0, 0);
     font-size: 2vw;
     justify-content: center;
     border-radius: 20px;
+    position:absolute;
+    top:10%;
+    
 }
 
 .stat__numbers ul {
@@ -507,8 +515,7 @@ html, body{
     list-style: none;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    
 }
 
 .item {
@@ -531,16 +538,17 @@ html, body{
     height: 100%;
     width: 100%;
     display: flex;
+    flex-direction:row;
     text-align: center;
     justify-content: center;
     align-items: center;
     padding: 0;
     margin: 0;
-    gap: 5%;
+    gap: 2.5%;
 }
 
 .js, .css {
-    height: 60%;
+    height: 90%;
     width: 45%;
     border: 1px solid black;
     border-radius: 10px;
@@ -548,12 +556,22 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-text-stroke:0;
+    
 }
 
 .js {
     background-color: rgb(130, 108, 253);
+    
 }
 
 .css {
     background-color: rgb(126, 126, 126);
+}
+
+
+.stat__numbers__box {
+    width:55%;
+    height:100%;
+    position:relative;
 }
