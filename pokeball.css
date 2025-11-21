@@ -332,7 +332,6 @@ html, body{
     flex-direction:column;
     justify-content:flex-start;
     align-items:center;
-   
     gap:20px;
 
 
@@ -345,12 +344,12 @@ html, body{
     height:15%;
     width:90%;
     background-image:linear-gradient(to bottom, rgb(255, 253, 112) 0%,rgb(255, 253, 112) 50%, white 50%, white 100%);
-    padding:4px 17px;
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
     align-items:flex-start;
-    gap:11px;
+    padding-left:2.5%;
+
    
 
 
@@ -359,20 +358,25 @@ html, body{
 
 .tophalfbox{
     display:flex;
+    width:100%;
+    height:100%;
     justify-content:flex-start;
     gap: 12px;
 }
 
 
-.left__half img {
-    height:3em;
-    width: 3em;
+.name img {
+    height:100%;
+    width: 8%;
    
 }
 
 
-.left__half h2 {
-    font-size:29px;
+.name h2 {
+    height:100%;
+    width:80%;
+    display:flex;
+    align-items:center;
    
 }
 
@@ -420,16 +424,21 @@ html, body{
 
 
 .bottom__box{
-    padding:1.5em;
     height:23%;
     width:100%;
-    margin-top:auto;
     background:linear-gradient(to bottom,  rgb(255, 253, 112) 0%,rgb(255, 253, 112) 50%, white 50%, white 100%);
     display:flex;
     flex-direction: column;
     justify-content:center;
     align-items:flex-start;
-    gap:30%;
+    padding-left:1.5%;
+}
+.bottom__box h2{
+    height:100%;
+    width:80%;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
 }
 
 
@@ -501,7 +510,6 @@ html, body{
     width: 90%;
     display: flex;
     color: rgb(0, 0, 0);
-    font-size: 2vw;
     justify-content: center;
     border-radius: 20px;
     position:absolute;
