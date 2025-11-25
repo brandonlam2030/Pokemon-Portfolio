@@ -43,6 +43,7 @@ html, body{
     transition:opacity 1s ease;
     z-index:-1;
     opacity:1;
+    visibility:visible;
 
 
 }
@@ -103,6 +104,7 @@ html, body{
     transition:opacity 1s ease;
     z-index:-1;
     opacity:1;
+    visibility: visible;
 }
 
 
@@ -121,12 +123,14 @@ html, body{
     width: 100%;
     display:flex;
     justify-content:flex-start;
-    align-items:flex-start;
+    align-items:center;
     position:relative;
     background-color:transparent;
 
 
 }
+
+
 
 
 .dialogue img {
@@ -193,8 +197,8 @@ html, body{
 
 #triangle__selector {
     position:absolute;
-    top:0;
-    left:0;
+    top:54%;
+    left:42%;
     height:0;
     width:0;
     width: 0;
@@ -298,6 +302,7 @@ html, body{
     z-index:-1;
     opacity:1;
     transition:opacity 1s ease;
+
    
 }
 
@@ -325,7 +330,6 @@ html, body{
 
 
 .left__half {
-    border: 10px solid black;
     height: 100%;
     width: 45%;
     display:flex;
@@ -446,7 +450,10 @@ html, body{
     height:100%;
     width:55%;
     display:flex;
-    align-items:flex-end;
+    align-items:center;
+    justify-content:flex-end;
+    flex-direction:column;
+    position:relative;
 }
 
 
@@ -463,7 +470,11 @@ html, body{
     height: 92%;
     width: 100%;
     border-radius: 20px 20px 0 0;
+    position:absolute;
     display: flex;
+    z-index:0;
+    border:2px solid black;
+    
 }
 
 .stat__names {
@@ -527,7 +538,7 @@ html, body{
 }
 
 .item {
-    -webkit-text-stroke: 1px grey;
+    -webkit-text-stroke: .75px rgb(87, 87, 87);
     height: 20%; 
     width: 100%;
     text-align: center;
@@ -535,6 +546,7 @@ html, body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-size:1.75em;
 }
 
 .username {
@@ -558,7 +570,6 @@ html, body{
 .js, .css {
     height: 90%;
     width: 45%;
-    border: 1px solid black;
     border-radius: 10px;
     color: white;
     display: flex;
@@ -569,12 +580,14 @@ html, body{
 }
 
 .js {
-    background-color: rgb(130, 108, 253);
+    background-color: rgb(194, 46, 40);
+    border-top:4px solid rgb(236, 71, 65);
     
 }
 
 .css {
-    background-color: rgb(126, 126, 126);
+    background-color: rgb(183, 183, 206);
+    border-top:4px solid rgb(209, 209, 224);
 }
 
 
@@ -582,4 +595,248 @@ html, body{
     width:55%;
     height:100%;
     position:relative;
+}
+
+.exp__bar {
+    height:4%;
+    width:90%;
+    border:2px solid black;
+    position:absolute;
+    top:73%;
+    border-radius:20px;
+    background:linear-gradient(to right, rgb(132, 221, 206) 0%, rgb(132, 221, 206) 80%, white 80%, white 100%);
+}
+
+.navbar {
+    height:8.25%;
+    width:100%;
+    z-index:2;
+    display:flex;
+    justify-content:flex-start;
+    padding-left:4%;
+    position:absolute;
+    top:0;
+    left:0;
+    
+}
+
+.navbar__main {
+    height:100%;
+    width:10%;
+    background-color:rgb(65, 175, 65);
+    border:2px solid black;
+    border-bottom:none;
+    border-radius: 5px 5px 0 0;
+    z-index:1;
+    border-right:none;
+}
+
+.navbar__skills{
+    height:100%;
+    width:10%;
+    background-color:rgb(255, 103, 103);
+    border:2px solid black;
+    border-bottom:2px solid black;
+    border-radius:5px 5px 0 0;
+    
+
+}
+
+.skill__box {
+    background: repeating-linear-gradient(
+        to bottom,
+        rgb(255, 103, 103) 0%,
+        rgb(255, 103, 103) 10%,
+        rgb(255, 165, 165) 10%,
+        rgb(255, 165, 165) 20%
+    );    
+    height: 92%;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    position:absolute;
+    display: flex;
+    z-index:1;
+    border:2px solid black;
+    visibility: hidden;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+.skills {
+    height:100%;
+    width:80%;
+    position:relative;
+    left:8%;
+    
+}
+
+.skill__names {
+    height:100%;
+    width:100%;
+}
+
+.skill1, .skill2, .skill3, .skill4 {
+    height:10%;
+    width:100%;
+    position:relative;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    color:white;
+    font-size:1.5em;
+    gap:3%;
+}
+
+
+.skill2{ 
+    top:10%;
+}
+
+.skill3{
+    top:20%;
+}
+
+
+
+.skill4 {
+    top:30%;
+}
+
+
+.js__skill {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:90%;
+    width:25%;
+    border-radius:10px;
+    position:relative;
+    background-color: rgb(194, 46, 40);
+    border-top:4px solid rgb(236, 71, 65);
+}
+
+.css__skill {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:90%;
+    width:25%;
+    border-radius:10px;
+    position:relative;
+    background-color: rgb(183, 183, 206);
+    border-top:4px solid rgb(209, 209, 224);
+}
+
+.html__skill { 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:90%;
+    width:25%;
+    border-radius:10px;
+    position:relative;
+    background-color: rgb(111, 53, 252);
+    border-top:4px solid rgb(146, 103, 255);
+}
+
+
+.no__skill {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:90%;
+    width:25%;
+    border-radius:10px;
+    position:relative;
+}
+
+.pp {
+    height:100%;
+    width:100%;
+    display:flex;
+    align-items:flex-start;
+    justify-content:flex-end;
+    position:absolute;
+    top:0;
+    
+
+}
+
+.pp1, .pp2, .pp3, .pp4{
+    height:9%;
+    width:40%;
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:rgb(0, 0, 0);
+    font-size:1.5em;
+    gap:3%;
+    background-color:white;
+    border-radius:10px;
+    gap:20%;
+}
+
+.pp1 {
+    top:10.5%;
+}
+
+.pp2 {
+    top:30.5%;
+}
+
+.pp3 {
+    top:50.5%;
+}
+
+.pp4 {
+    top:70.5%;
+}
+
+.pos {
+    height:7%;
+    width:25%;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:repeat(2,1fr);
+    border:2px solid rgb(255, 103, 103);
+    position:absolute;
+    left:0;
+}
+
+.pos1 {
+    top:11.5%;
+}
+
+.pos2 {
+    top:31.5%;
+}
+
+.pos3  {
+    top: 51.5%;
+}
+
+.pos4 {
+    top:71.5%;
+}
+
+.pos > div {
+    background:transparent;
+    border:1px solid rgb(255, 103, 103);
+}
+
+.pos1 > div:nth-child(1) {
+    background-color:rgb(255, 103, 103);
+}
+
+.pos2 > div:nth-child(2) {
+    background-color:rgb(255, 103, 103);
+}
+
+.pos3 > div:nth-child(3) {
+    background-color:rgb(255, 103, 103);
+}
+
+.pos4 > div:nth-child(4) {
+    background-color:rgb(255, 103, 103);
 }
