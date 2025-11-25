@@ -5,9 +5,6 @@
   font-style: normal;
 }
 
-
-
-
 *{
     box-sizing: border-box;
     margin:0;
@@ -20,13 +17,16 @@
 
 #wrapper {
     background-color:black;
+    
 }
 
-
+.page {
+    position:absolute;
+}
 html, body{
     height:100%;
     margin:0;
-    background-color:white;
+    background-color:rgb(0, 0, 0);
     cursor:none;
 }
 
@@ -40,8 +40,6 @@ html, body{
     height:100vh;
     background: url("Images/GradientIntro.jpg");
     background-size:cover;
-    transition:opacity 1s ease;
-    z-index:-1;
     opacity:1;
     visibility:visible;
 
@@ -49,8 +47,18 @@ html, body{
 }
 
 
-.screenone.show, .screentwo.show ,.screenthree.show ,.abt__me.show ,.project1.show{
+.screenone.hide, .screentwo.hide ,.screenthree.hide ,.abt__me.hide ,.project1.hide, .project2.hide, .project3.hide, .project4.hide, .project5.hide, .project6.hide{
     opacity:0;
+    z-index:0;
+    visibility:hidden;
+    transition:opacity 1s ease, visibility 1s 0s;
+}
+
+.screenone.show, .screentwo.show ,.screenthree.show ,.abt__me.show ,.project1.show, .project2.show, .project3.show, .project4.show, .project5.show, .project6.show {
+    opacity:1;
+    z-index:1;
+    visibility:visible;
+    transition:opacity 1s ease 1s, visibility 1s 1s;
 }
 
 
@@ -93,7 +101,7 @@ html, body{
 
 
 .screentwo {
-    display:none;
+    display:flex;
     background-color:black;
     height:100vh;
     width:100%;
@@ -101,22 +109,9 @@ html, body{
     justify-content:flex-end;
     padding:0 10px;
     align-items:center;
-    transition:opacity 1s ease;
-    z-index:-1;
-    opacity:1;
-    visibility: visible;
+    opacity:0;
+    visibility: hidden;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .dialogue {
     height:35vh;
@@ -130,13 +125,11 @@ html, body{
 
 }
 
-
-
-
 .dialogue img {
     width:100%;
     height:100%;
 }
+
 .words {
     inset:17% 2%;
     line-height: 1.75;
@@ -156,14 +149,13 @@ html, body{
 .screenthree {
     width: 100%;
     min-height:100svh;
-    display:none;
+    display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:flex-end;
     height:100vh;
-    transition:opacity 1s ease;
-    z-index:-1;
-    opacity:1;
+    opacity:0;
+    visibility: hidden;
     padding:0 10px;
 }
 
@@ -213,14 +205,13 @@ html, body{
 
 
 .abt__me  {
-    display:none;
+    display:flex;
     height:100vh;
     width:100vw;
     justify-content:flex-start;
     align-items:center;
-    transition:opacity 1s ease;
-    z-index:-1;
-    opacity:1;
+    opacity:0;
+    visibility:hidden;
     background: repeating-linear-gradient(
         to bottom, 
         rgb(94, 121, 69) 0,
@@ -291,7 +282,7 @@ html, body{
 
 
 
-.project1 {
+.project1, .project2, .project3, .project4, .project5, .project6 {
     display:flex;
     height: 100vh;
     width:100%;
@@ -299,12 +290,12 @@ html, body{
     align-items:flex-start;
     background-color:rgba(241, 255, 230, 0.926);
     flex-direction:column;
-    z-index:-1;
-    opacity:1;
-    transition:opacity 1s ease;
+    opacity:0;
+    visibility:hidden;
 
    
 }
+
 
 
 .project__heading{
@@ -567,7 +558,7 @@ html, body{
     gap: 2.5%;
 }
 
-.js, .css {
+.js, .css , .java{
     height: 90%;
     width: 45%;
     border-radius: 10px;
@@ -590,6 +581,10 @@ html, body{
     border-top:4px solid rgb(209, 209, 224);
 }
 
+.java {
+    background-color: rgb(238, 108, 48);
+    border-top:4px solid rgb(255, 126, 66);
+}
 
 .stat__numbers__box {
     width:55%;
@@ -739,7 +734,17 @@ html, body{
     border-top:4px solid rgb(146, 103, 255);
 }
 
-
+.java__skill {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:90%;
+    width:25%;
+    border-radius:10px;
+    position:relative;
+    background-color: rgb(238, 108, 48);
+    border-top:4px solid rgb(255, 126, 66);
+}
 .no__skill {
     display:flex;
     align-items:center;
