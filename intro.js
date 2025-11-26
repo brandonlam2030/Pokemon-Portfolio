@@ -16,7 +16,7 @@ document.addEventListener("keydown", (event) => {
 
 
 function blink(elementID, interval) {
-    const element = document.getElementById(elementID);
+    const element = document.querySelector(elementID);
     let isVisible = true;
 
     setInterval(() => {
@@ -30,8 +30,10 @@ function blink(elementID, interval) {
 }
 
 
-blink('start', 700);
-blink('triangle__selector',400);
+blink('.start', 700);
+blink('.triangle__selector__down',400);
+blink('.triangle__selector__right',500);
+
 
 let typedInstance = null;
 let position = 1;
@@ -77,6 +79,7 @@ function switchScene(classOne, classTwo, show, isForward = true) {
             startDelay:500,
             onComplete: () => {
                 cont = true;
+                ready = true;
             }
         });
 
@@ -84,6 +87,8 @@ function switchScene(classOne, classTwo, show, isForward = true) {
         }, 1000);
     } else {
         cont = true;
+        ready = true;
+        console.log("set");
     }
 
 }
@@ -105,9 +110,13 @@ function updateSelection() {
     boxes[index].classList.add("selected");
 }
 
-
+let pb = 0;
+let ready = true;
+let profile__pos = 0;
+let inputLocked = false;
 document.addEventListener('keydown', (event) => {
     const key = event.key.toLowerCase();
+    
 
 
     if (step === 2) {
@@ -117,56 +126,55 @@ document.addEventListener('keydown', (event) => {
             position++;
         }
 
-
+        let element = document.querySelector(".triangle__selector__down")
         if (position === 0) {
-            document.getElementById("triangle__selector").style.left = "25%";
-            document.getElementById("triangle__selector").style.top = "46%";
+            element.style.left = "25%";
+            element.style.top = "46%";
         } else if (position === 1) {
-            document.getElementById("triangle__selector").style.left = "42%";
-            document.getElementById("triangle__selector").style.top = "54%";
+            element.style.left = "42%";
+            element.style.top = "54%";
         } else if (position === 2) {
-            document.getElementById("triangle__selector").style.left = "64.5%";
-            document.getElementById("triangle__selector").style.top = "45%";
+            element.style.left = "64.5%";
+            element.style.top = "45%";
         }
     }
     
 
     if (step === 3) {
         const total = boxes.length;
-
+        ready = true;
         switch(event.key) {
             case 'ArrowRight':
                 if ((index+1) % numcol !== 0 && index + 1 < total) {
                     index++;
-
+                    console.log(cont);
                     break;
                 }
                 break;
             case 'ArrowLeft':
                 if (index % numcol !== 0) {
                     index--;
-
+console.log(cont);
                     break;
                 }
                 break;
             case 'ArrowUp':
                 if (index - numcol >= 0) {
                     index -= numcol;
-
+console.log(cont);
                     break;
                 }
                 break;
             case 'ArrowDown':
                 if (index + numcol < 6) {
                     index += numcol;
-
+console.log(cont);
                     break;
                 }
                 break;
             case  'z':
             case 'Z':
                 select = true;
-
                 break;
             
             
@@ -208,6 +216,9 @@ document.addEventListener('keydown', (event) => {
     
 
    if(key === 'z') {
+        if (inputLocked) return;
+
+        wait(500);
         if (step === 0) {
             switchScene(screens[step], screens[step+1], true);
             step++; 
@@ -221,9 +232,9 @@ document.addEventListener('keydown', (event) => {
             cont = false;
             screencount = 1;
             return;
-        } else if (position === 0 && step === 2 && cont) {
-            switchScene(screens[step], screens[step+1][1], true);
-            abt__hover = true;
+        } else if (step === 2 && cont) {
+            switchScene(screens[step], screens[step+1][position], true);
+            abt__hover = true;  
             screencount = 2;
             step++;
             return;
@@ -238,11 +249,18 @@ document.addEventListener('keydown', (event) => {
    }
     
    if (key === 'x' && tracker.length > 0 && cont) {
+        if (inputLocked) return;
+        wait(2000);
         switchScene(curr,tracker.pop(), true, false);
    }
 })
 
-
+function wait(time) {
+    setTimeout(() => {
+        inputLocked = false;
+    },time);
+    inputLocked = true;
+}
 
 
 
