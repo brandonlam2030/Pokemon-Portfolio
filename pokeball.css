@@ -23,6 +23,8 @@
 .page {
     position:absolute;
 }
+
+
 html, body{
     height:100%;
     margin:0;
@@ -47,23 +49,19 @@ html, body{
 }
 
 
-.screenone.hide, .screentwo.hide ,.screenthree.hide ,.abt__me.hide ,.project1.hide, .project2.hide, .project3.hide, .project4.hide, .project5.hide, .project6.hide{
+.screenone.hide, .screentwo.hide ,.screenthree.hide ,.abt__me.hide, .profile.hide ,.project1.hide, .project2.hide, .project3.hide, .project4.hide, .project5.hide, .project6.hide{
     opacity:0;
     z-index:0;
     visibility:hidden;
     transition:opacity 1s ease, visibility 1s 0s;
 }
 
-.screenone.show, .screentwo.show ,.screenthree.show ,.abt__me.show ,.project1.show, .project2.show, .project3.show, .project4.show, .project5.show, .project6.show {
+.screenone.show, .screentwo.show ,.screenthree.show ,.abt__me.show , .profile.show, .project1.show, .project2.show, .project3.show, .project4.show, .project5.show, .project6.show {
     opacity:1;
     z-index:1;
     visibility:visible;
     transition:opacity 1s ease 1s, visibility 1s 1s;
 }
-
-
-
-
 
 
 .intro{
@@ -75,10 +73,6 @@ html, body{
     gap:12px;
    
 }
-
-
-
-
 
 
 .intro img {
@@ -113,6 +107,7 @@ html, body{
     visibility: hidden;
 }
 
+
 .dialogue {
     height:35vh;
     width: 100%;
@@ -125,10 +120,12 @@ html, body{
 
 }
 
+
 .dialogue img {
     width:100%;
     height:100%;
 }
+
 
 .words {
     inset:17% 2%;
@@ -160,10 +157,6 @@ html, body{
 }
 
 
-
-
-
-
 .outter__suitcase {
     height:65%;
     width:50%;
@@ -183,10 +176,6 @@ html, body{
 }
 
 
-
-
-
-
 #triangle__selector {
     position:absolute;
     top:54%;
@@ -200,8 +189,6 @@ html, body{
     border-top: 40px solid rgb(208, 0, 0);
    
 }
-
-
 
 
 .abt__me  {
@@ -232,8 +219,7 @@ html, body{
     grid-template-columns: repeat(2,1fr);
     grid-template-rows:repeat(3,auto);
     gap:1%;
-    padding-top:.5%;
-
+    padding: 1%;
     width:100%;
     height:100%;
    
@@ -259,7 +245,11 @@ html, body{
     drop-shadow(0 0 40px rgba(4, 134, 255, 0.808));
   transform: scale(1.01);
 }
+
+
 .abt__me__heading {
+    display:flex;
+    align-items:flex-end;
     justify-content:flex-start;
     width:100%;
     height:9%;
@@ -273,13 +263,10 @@ html, body{
     width:70%;
     height:100%;
     padding:10px 15px;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
 }
-
-
-
-
-
-
 
 
 .project1, .project2, .project3, .project4, .project5, .project6 {
@@ -295,7 +282,6 @@ html, body{
 
    
 }
-
 
 
 .project__heading{
@@ -428,6 +414,8 @@ html, body{
     align-items:flex-start;
     padding-left:1.5%;
 }
+
+
 .bottom__box h2{
     height:100%;
     width:80%;
@@ -448,8 +436,6 @@ html, body{
 }
 
 
-
-
 .stat__box {
     background: repeating-linear-gradient(
         to bottom,
@@ -468,6 +454,7 @@ html, body{
     
 }
 
+
 .stat__names {
     height: 100%;
     width: 45%;
@@ -479,6 +466,7 @@ html, body{
     font-size: 2em;
     color: white;
 }
+
 
 .stat__names ul {
     list-style: none;
@@ -492,6 +480,7 @@ html, body{
     justify-content: flex-start;
 }
 
+
 .stat__names li {
     display: flex;
     align-items: center;
@@ -499,6 +488,7 @@ html, body{
     width: 100%;
     padding-left: 10%;
 }
+
 
 .stat__numbers {
     background: repeating-linear-gradient(
@@ -519,6 +509,7 @@ html, body{
     
 }
 
+
 .stat__numbers ul {
     margin: 0;
     padding: 0;
@@ -527,6 +518,7 @@ html, body{
     height: 100%;
     
 }
+
 
 .item {
     -webkit-text-stroke: .75px rgb(87, 87, 87);
@@ -540,10 +532,12 @@ html, body{
     font-size:1.75em;
 }
 
+
 .username {
     color: rgb(65, 65, 255);
     -webkit-text-stroke: 1px rgb(170, 170, 252);
 }
+
 
 .type {
     height: 100%;
@@ -558,6 +552,7 @@ html, body{
     gap: 2.5%;
 }
 
+
 .js, .css , .java{
     height: 90%;
     width: 45%;
@@ -570,27 +565,32 @@ html, body{
     
 }
 
+
 .js {
     background-color: rgb(194, 46, 40);
     border-top:4px solid rgb(236, 71, 65);
     
 }
 
+
 .css {
     background-color: rgb(183, 183, 206);
     border-top:4px solid rgb(209, 209, 224);
 }
+
 
 .java {
     background-color: rgb(238, 108, 48);
     border-top:4px solid rgb(255, 126, 66);
 }
 
+
 .stat__numbers__box {
     width:55%;
     height:100%;
     position:relative;
 }
+
 
 .exp__bar {
     height:4%;
@@ -599,7 +599,21 @@ html, body{
     position:absolute;
     top:73%;
     border-radius:20px;
+}
+
+
+.bar0 {
     background:linear-gradient(to right, rgb(132, 221, 206) 0%, rgb(132, 221, 206) 80%, white 80%, white 100%);
+}
+
+
+.bar1 {
+    background:linear-gradient(to right, rgb(132, 221, 206) 0%, rgb(132, 221, 206) 60%, white 60%, white 100%);
+}
+
+
+.bar2 {
+    background:linear-gradient(to right, rgb(132, 221, 206) 0%, rgb(132, 221, 206) 30%, white 30%, white 100%);
 }
 
 .navbar {
@@ -615,6 +629,7 @@ html, body{
     
 }
 
+
 .navbar__main {
     height:100%;
     width:10%;
@@ -626,6 +641,7 @@ html, body{
     border-right:none;
 }
 
+
 .navbar__skills{
     height:100%;
     width:10%;
@@ -636,6 +652,7 @@ html, body{
     
 
 }
+
 
 .skill__box {
     background: repeating-linear-gradient(
@@ -657,6 +674,7 @@ html, body{
     align-items:flex-start;
 }
 
+
 .skills {
     height:100%;
     width:80%;
@@ -665,10 +683,12 @@ html, body{
     
 }
 
+
 .skill__names {
     height:100%;
     width:100%;
 }
+
 
 .skill1, .skill2, .skill3, .skill4 {
     height:10%;
@@ -687,18 +707,17 @@ html, body{
     top:10%;
 }
 
+
 .skill3{
     top:20%;
 }
-
 
 
 .skill4 {
     top:30%;
 }
 
-
-.js__skill {
+.js__skill, .css__skill, .html__skill, .java__skill, .normal__skill {
     display:flex;
     align-items:center;
     justify-content:center;
@@ -706,45 +725,41 @@ html, body{
     width:25%;
     border-radius:10px;
     position:relative;
+    font-size:.9em;
+}
+
+
+.js__skill {
     background-color: rgb(194, 46, 40);
     border-top:4px solid rgb(236, 71, 65);
 }
 
+
 .css__skill {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:90%;
-    width:25%;
-    border-radius:10px;
-    position:relative;
     background-color: rgb(183, 183, 206);
     border-top:4px solid rgb(209, 209, 224);
 }
 
+
 .html__skill { 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:90%;
-    width:25%;
-    border-radius:10px;
-    position:relative;
     background-color: rgb(111, 53, 252);
     border-top:4px solid rgb(146, 103, 255);
 }
 
+
 .java__skill {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:90%;
-    width:25%;
-    border-radius:10px;
-    position:relative;
     background-color: rgb(238, 108, 48);
     border-top:4px solid rgb(255, 126, 66);
+
 }
+
+
+.normal__skill {
+    background-color: rgb(206, 206, 190);
+    border-top:4px solid rgb(220, 220, 192);
+}
+
+
 .no__skill {
     display:flex;
     align-items:center;
@@ -754,6 +769,7 @@ html, body{
     border-radius:10px;
     position:relative;
 }
+
 
 .pp {
     height:100%;
@@ -766,6 +782,7 @@ html, body{
     
 
 }
+
 
 .pp1, .pp2, .pp3, .pp4{
     height:9%;
@@ -782,21 +799,26 @@ html, body{
     gap:20%;
 }
 
+
 .pp1 {
     top:10.5%;
 }
+
 
 .pp2 {
     top:30.5%;
 }
 
+
 .pp3 {
     top:50.5%;
 }
 
+
 .pp4 {
     top:70.5%;
 }
+
 
 .pos {
     height:7%;
@@ -809,39 +831,146 @@ html, body{
     left:0;
 }
 
+
 .pos1 {
     top:11.5%;
 }
+
 
 .pos2 {
     top:31.5%;
 }
 
+
 .pos3  {
     top: 51.5%;
 }
 
+
 .pos4 {
     top:71.5%;
 }
+
 
 .pos > div {
     background:transparent;
     border:1px solid rgb(255, 103, 103);
 }
 
+
 .pos1 > div:nth-child(1) {
     background-color:rgb(255, 103, 103);
 }
+
 
 .pos2 > div:nth-child(2) {
     background-color:rgb(255, 103, 103);
 }
 
+
 .pos3 > div:nth-child(3) {
     background-color:rgb(255, 103, 103);
 }
 
+
 .pos4 > div:nth-child(4) {
     background-color:rgb(255, 103, 103);
+}
+
+
+.profile {
+    opacity:0;
+    visibility:hidden;
+    display:flex;
+    height:100%;
+    width:100%;
+    justify-content:flex-start;
+    align-items:center;
+    flex-direction:column;
+    background-color:rgb(254, 255, 186);
+   padding-top:1%;
+   padding-right:1%;
+   position:relative;
+}
+
+
+
+.profile__top {
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+    height:70%;
+    width:95%;
+    position:relative;
+    background-color:rgb(255, 103, 103);
+    border-radius:20px 20px 0 0;
+}
+
+.profile__stats {
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    width:60%;
+    border:2px solid black;
+    justify-content:flex-start;
+    align-items:center;
+    position:relative;
+}
+
+.line1, .line2, .line3, .line4, .line5 {
+    position:absolute;
+    height:12%;
+    width:100%;
+    background-color:white;
+    opacity:.4;
+    border-radius:10px;
+}
+
+.line1 {
+    top:12%;
+}
+
+.line2 {
+    top:25%;
+}
+
+
+.line3 {
+    top:45%;
+}
+
+.line4 {
+    top:65%;
+}
+
+.line5 {
+    top:85%;
+}
+
+
+.character {
+    height:100%;
+    width:40%;
+    border:2px solid yellow;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.characterimg{ 
+    background-color:white;
+    opacity:.4;
+    height:70%;
+    width:80%;
+}
+
+
+.profile__bottom {
+    height:29%;
+    width:95%;
+    position:absolute;
+    background-color:rgb(255, 103, 103);
+    top:70%;
+    border-radius:10px;
 }

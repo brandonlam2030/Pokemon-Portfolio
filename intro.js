@@ -1,4 +1,4 @@
-let screens = [".screenone",".screentwo",".screenthree",[".abt__me"], 
+let screens = [".screenone",".screentwo",".screenthree",[".abt__me", ".profile"], 
               [".project1",".project2",".project3",".project4",".project5",".project6"]];
 
 
@@ -221,8 +221,8 @@ document.addEventListener('keydown', (event) => {
             cont = false;
             screencount = 1;
             return;
-        } else if (position === 0 && step === 2) {
-            switchScene(screens[step], screens[step+1][0], true);
+        } else if (position === 0 && step === 2 && cont) {
+            switchScene(screens[step], screens[step+1][1], true);
             abt__hover = true;
             screencount = 2;
             step++;
